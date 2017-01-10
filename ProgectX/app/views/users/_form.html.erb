@@ -1,0 +1,15 @@
+<%= simple_form_for @user, url: {action: "create"}, html: {id: 'new_user', autocomplete: 'off', default: ""} do |f| %>
+
+  <%= f.input :name, label: "Your name" %>
+
+  <%= f.input :second_name, label: "Second name" %>
+
+  <%= f.input :email, label: "Email" %>
+  
+  <%= f.input :password, label: "Password" %>
+
+  <%= f.input :password_confirmation, label: "Password confirmation" %>
+
+  <%= f.submit 'Sign up'%>
+
+<% end %>
