@@ -1,0 +1,40 @@
+<header>
+  
+  <div class = "container">
+    
+    <div class = "logo">
+      <h1><a class = "mains" href = "/mains"> Main page</a></h1>
+    </div>
+
+    <% if current_user %>
+
+      <div class = "nav1">
+        <ul>
+          <li class = "li2", id = "header_user_link"><%= current_user.name %>
+            
+            <div id = "user_menu">
+              <p><%= link_to "User", current_user %></p>
+              <p><%= link_to "Your profile", user_profile_path(current_user, current_user) %></p>
+            </div>
+
+          </li>
+          <li class = "li2"><%= link_to "Sign out", sign_out_path %></li>
+        </ul>
+      </div>
+
+    <% else %>
+      
+      <div class = "nav1">
+        <ul>
+        	<li class = "li2"><%= link_to "Sign up", sign_up_path %></li>
+        	<li class = "li2"><%= link_to "Sign in", sign_in_path %></li>
+        </ul>
+      </div>
+
+    <%end%>
+
+  </div>
+    
+</header>
+
+<div class = "d"></div>
