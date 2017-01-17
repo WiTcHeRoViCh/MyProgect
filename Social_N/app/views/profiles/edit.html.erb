@@ -1,0 +1,17 @@
+<h1>Edit your profile</h1>
+
+<%= form_for [@user, @profile], html: {autocomplete: 'off'} do |f| %>
+
+  <%= f.label :gender %><br/>
+  <%= f.radio_button :gender, "Man", value: "man" %>
+  <%= f.radio_button :gender, "Woman", value: "woman" %>
+
+  <%= f.label :birthday %>
+  <%= f.date_field :birthday %>
+  
+  <%= f.label :about %>
+  <%= f.text_field :about %>
+
+  <%= f.submit %>
+
+<% end %>	
