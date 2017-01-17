@@ -1,11 +1,7 @@
 $(document).ready(function() {
   
   $('#header_user_link').hover(function() {
-    $('#user_menu').toggle("slow");
+    $('#user_menu').toggle("fast");
   });
-
-  function ShowOrHide(iD) {
-  	$(this).toggle();
-  }
 
 });

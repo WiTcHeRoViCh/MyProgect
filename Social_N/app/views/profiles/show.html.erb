@@ -1,3 +1,23 @@
-<h1>Profile</h1>
-<%= @profile.birthday %><br/>
-<%= image_tag(@profile.avatar) %>
+<h1>Your information</h1>
+
+<p>
+	Country: <b><%= @profile.country %></b>
+</p>
+
+<p>
+	Birthday: <b><%= @profile.birthday %></b>
+</p>
+
+<p>
+	Gender: <b><%= @profile.gender %></b>
+</p>
+
+<p>
+	Your avatar:<br/>
+	<%= if @profile.avatar?
+		    image_tag(@profile.avatar)
+      else
+      	image_tag "default.png"
+      end	
+	%>
+</p>
