@@ -1,31 +1,26 @@
 class ProfilesController < ApplicationController
-	before_action :current_profile, only: [:show, :edit, :update]
+  before_action :current_profile, only: [:show, :edit, :update]
 
-  def show
+  def show; end
 
-  end
-  
-  def edit
-
-  end
+  def edit; end
 
   def update
     if @profile.update(profile_params)
       redirect_to user_profile_path(current_user, current_user)
     else
       render :new
-    end    	
+    end
   end
 
   private
 
   def current_profile
-  	@user = User.find(session[:user_id])
+    @user = User.find(session[:user_id])
     @profile = @user.profile
-  end	
+  end
 
   def profile_params
     params.require(:profile).permit(:gender, :birthday, :country, :about, :avatar)
-  end	
-
-end	
+  end
+end

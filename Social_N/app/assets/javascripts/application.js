@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require_tree .
 
-
+$(document).ready(function() {
+  $('input[name="profile[birthday]"]').daterangepicker({
+    singleDatePicker: true,
+    showDropdowns: true
+  });
+});
