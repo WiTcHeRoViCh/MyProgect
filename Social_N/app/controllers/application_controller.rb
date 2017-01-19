@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
 
   def login?
-    redirect_to sign_in_path unless current_user
+    redirect_to root_path unless current_user
   end
 
   def current_user

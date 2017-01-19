@@ -13,9 +13,9 @@
           <li class = "li2", id = "header_user_link"><%= current_user.name %>
             
             <div id = "user_menu">
-              <%= link_to "User", current_user %><br/>
-              <%= link_to "Your profile", user_profile_path(current_user, current_user) %><br/>
-              <%= link_to "Edit", edit_user_profile_path(current_user, current_user) %><br/>
+              <div class = "user_menu_link"><%= link_to "User", current_user %></div>
+              <div class = "user_menu_link"><%= link_to "Your profile", user_profile_path(current_user, current_user) %></div>
+              <div class = "user_menu_link"><%= link_to "Edit", edit_user_profile_path(current_user, current_user) %></div>
             </div>
 
           </li>
@@ -28,7 +28,29 @@
       <div class = "nav1">
         <ul>
         	<li class = "li2"><%= link_to "Sign up", sign_up_path %></li>
-        	<li class = "li2"><%= link_to "Sign in", sign_in_path %></li>
+        	<li class = "li2", id = "header_sign_in"><%= "Sign in" %>
+
+            <div id = "d_sign_in">
+              <div class = "d_cont">
+                <%= form_tag sessions_path, html: { autocomplete: 'off'} do %>
+                  
+                  <div class = "form_label">
+                    <%= label_tag :email %>
+                    <%= email_field_tag :email %>
+                  </div>  
+                  <p></p>
+                  <div class = "form_label">
+                    <%= label_tag :password %>
+                    <%= password_field_tag :password %>
+                  </div>  
+                  <p></p>
+                  <%= submit_tag 'Sign in' %>
+
+                <% end %>
+              </div>
+            </div> 
+          
+          </li> 
         </ul>
       </div>
 

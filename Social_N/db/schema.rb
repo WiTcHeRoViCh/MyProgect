@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170116183103) do
   create_table "profiles", force: :cascade do |t|
     t.string   "gender"
     t.string   "country"
-    t.string   "birthday"
+    t.date     "birthday"
     t.text     "about"
     t.integer  "user_id"
     t.datetime "created_at", null: false

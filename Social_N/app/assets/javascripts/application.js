@@ -15,8 +15,14 @@
 //= require_tree .
 
 $(document).ready(function() {
+
+
   $('input[name="profile[birthday]"]').daterangepicker({
+  	locale: {
+  		format: 'YYYY-MM-DD'
+  	},
     singleDatePicker: true,
     showDropdowns: true
   });
+
 });
