@@ -31,8 +31,16 @@ li {
 li.li2 {
 	color: #00008B;
   float: left;
-	margin-left: 10px;
-  padding-top: 17%;
+	margin-left: 15px;
+  margin-top: 3%;
+}
+
+div.header_sign_out {
+	position: relative; top: 15px;
+}
+
+ul.ul2 {
+	position: relative; top:17px;
 }
 
 div#user_menu {
@@ -72,4 +80,12 @@ div.form_label {
 div.user_menu_link {
 	padding-top: 5px;
 	padding-left: 5px;
+}
+
+div.user_mini_avatar {
+  position: relative;
+}
+
+span.user_mini_avatar_text {
+	position: relative; bottom:15px;
 }
