@@ -17,7 +17,7 @@
 	<%= if @profile.avatar?
 		    image_tag(@profile.avatar)
       else
-      	image_tag "default.png"
+      	image_tag(@profile.avatar = "default.png")
       end	
 	%>
 </p>

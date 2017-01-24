@@ -1,9 +1,11 @@
 class ProfilesController < ApplicationController
   before_action :current_profile, only: [:show, :edit, :update]
 
-  def show; end
+  def show
+  end
 
-  def edit; end
+  def edit
+  end
 
   def update
     if @profile.update(profile_params)

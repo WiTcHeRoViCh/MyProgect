@@ -21,6 +21,7 @@ $(document).ready(function() {
   	locale: {
   		format: 'YYYY-MM-DD'
   	},
+  	startDate: '2000-01-01',
     singleDatePicker: true,
     showDropdowns: true
   });

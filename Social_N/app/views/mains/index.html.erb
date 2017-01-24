@@ -1,1 +1,19 @@
 <h1>Mains</h1>
+
+<% if @users.empty? %>
+  
+  <% if current_user %>
+    <h3>You are first, how sign up here</h3>
+  <% else %>  
+    <h3>No one user find. You may be first</h3>
+  <% end %>
+
+<% else %>
+  <% @users.each do |user| %>
+
+    <p>
+  	  <%= user.name %>
+    </p>
+
+  <% end %>	
+<% end %>

@@ -13,10 +13,10 @@
   <%= f.text_field :country %><br/></p>
 
   <p><%= f.label :birthday %><br/>
-  <%= f.date_field :birthday %><br/></p>
+  <%= f.date_field :birthday, value: "Не установленно" %><br/></p>
   
   <p><%= f.label :about %><br/>
-  <%= f.text_field :about %><br/></p>
+  <%= f.text_area :about %><br/></p>
 
   <p><%= f.label :avatar %><br/>
   <%= f.file_field :avatar %></p>

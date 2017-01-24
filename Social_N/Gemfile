@@ -25,12 +25,16 @@ gem 'slim-rails'
 gem 'carrierwave'
 gem 'bootstrap-sass'
 gem 'mini_magick'
+gem 'rmagick'
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
-  gem 'database_cleaner'
+  gem 'database_cleaner'  
   gem 'factory_girl_rails'
   gem 'poltergeist'
   gem 'simplecov'

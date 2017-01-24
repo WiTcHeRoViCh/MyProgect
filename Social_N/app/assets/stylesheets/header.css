@@ -61,7 +61,7 @@ div#d_sign_in {
 	background: #ECECEC;
 	border: 1px solid #a5a5a5;
 	border-radius: 3px;
-	right: 17%;
+	right: 1%;
 	
 
 }
@@ -83,9 +83,9 @@ div.user_menu_link {
 }
 
 div.user_mini_avatar {
-  position: relative;
+  position: relative; bottom: 3px;
 }
 
 span.user_mini_avatar_text {
-	position: relative; bottom:15px;
+	position: relative; bottom: 17px;
 }
