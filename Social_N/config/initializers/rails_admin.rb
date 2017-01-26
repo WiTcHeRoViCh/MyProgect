@@ -1,7 +1,9 @@
 RailsAdmin.config do |config|
 
+  config.parent_controller = "::ApplicationController"
+
   config.authorize_with do
-    unless User.find(session[:user_id]).admin == true
+    unless current_user.admin == true
       flash[:error] = "You don't have admin rights"
       redirect_to main_app.root_path
     end  
@@ -31,6 +33,7 @@ RailsAdmin.config do |config|
 
   config.model 'User' do 
     list do
+      field :id
       field :name
       field :email
       field :admin 
@@ -38,8 +41,10 @@ RailsAdmin.config do |config|
 
     edit do
       exclude_fields :profile, :password_digest
-      field :password
-      field :password_confirmation
+    end  
+
+    show do
+      exclude_fields :password_digest
     end  
   end    
 
