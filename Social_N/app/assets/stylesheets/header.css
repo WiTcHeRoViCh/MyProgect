@@ -61,9 +61,7 @@ div#d_sign_in {
 	background: #ECECEC;
 	border: 1px solid #a5a5a5;
 	border-radius: 3px;
-	right: 1%;
-	
-
+	right: 0%;
 }
 
 div.d_cont {
@@ -88,4 +86,11 @@ div.user_mini_avatar {
 
 span.user_mini_avatar_text {
 	position: relative; bottom: 17px;
+}
+
+
+div.user_admin {
+	position: absolute;
+	top: 37%;
+  left:40%;
 }

@@ -9,16 +9,19 @@
     <% if current_user %>
 
       <div class = "nav1">
+
+        <% if current_user.admin %>
+          <div class = "user_admin">
+            <button onclick="location.href = '/admin'">Admin path</button>
+          </div>
+        <% end %>  
+
         <ul>
           <li class = "li2", id = "header_user_link">
 
             <div class = "user_mini_avatar"><span class = "user_mini_avatar_text"><%= current_user.name %></span><%= image_tag(current_user.profile.avatar.thumb) %></div>
             
-            <div id = "user_menu">
-              <div class = "user_menu_link"><%= link_to "User", current_user %></div>
-              <div class = "user_menu_link"><%= link_to "Your profile", user_profile_path(current_user, current_user) %></div>
-              <div class = "user_menu_link"><%= link_to "Edit", edit_user_profile_path(current_user, current_user) %></div>
-            </div>
+              <%= render 'header/user_menu' %>
 
           </li>
           <li class = "li2"><div class = "header_sign_out"><%= link_to "Sign out", sign_out_path %></div></li>
@@ -32,25 +35,7 @@
         	<li class = "li2"><%= link_to "Sign up", sign_up_path %></li>
         	<li class = "li2", id = "header_sign_in"><%= "Sign in" %>
 
-            <div id = "d_sign_in">
-              <div class = "d_cont">
-                <%= form_tag sessions_path, html: { autocomplete: 'off'} do %>
-                  
-                  <div class = "form_label">
-                    <%= label_tag :email %>
-                    <%= email_field_tag :email %>
-                  </div>  
-                  <p></p>
-                  <div class = "form_label">
-                    <%= label_tag :password %>
-                    <%= password_field_tag :password %>
-                  </div>  
-                  <p></p>
-                  <%= submit_tag 'Sign in' %>
-
-                <% end %>
-              </div>
-            </div> 
+            <%= render 'header/sign_in' %>
           
           </li> 
         </ul>

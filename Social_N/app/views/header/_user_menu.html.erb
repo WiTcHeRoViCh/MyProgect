@@ -1,0 +1,5 @@
+<div id = "user_menu">
+  <div class = "user_menu_link"><%= link_to "User", current_user %></div>
+  <div class = "user_menu_link"><%= link_to "Your profile", user_profile_path(current_user, current_user) %></div>
+  <div class = "user_menu_link"><%= link_to "Edit", edit_user_profile_path(current_user, current_user) %></div>
+</div>
