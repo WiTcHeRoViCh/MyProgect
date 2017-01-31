@@ -19,7 +19,7 @@
         <ul>
           <li class = "li2", id = "header_user_link">
 
-            <div class = "user_mini_avatar"><span class = "user_mini_avatar_text"><%= current_user.name %></span><%= image_tag(current_user.profile.avatar.thumb) %></div>
+            <div class = "user_mini_avatar"><span class = "user_mini_avatar_text"><%= current_user.name %></span><%= image_tag(current_user.profile.avatar.thumb, {class: "mini_avatar"}) %></div>
             
               <%= render 'header/user_menu' %>
 

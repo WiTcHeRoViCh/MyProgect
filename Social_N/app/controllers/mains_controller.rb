@@ -4,6 +4,7 @@ class MainsController < ApplicationController
       @users = User.all - [current_user]
     else
       @users = User.all
-    end    
+    end
+  	authorize! :index, Main
   end
 end

@@ -27,6 +27,7 @@ gem 'bootstrap-sass'
 gem 'mini_magick'
 gem 'rmagick'
 gem 'rails_admin', '~> 1.0'
+gem 'cancancan'
 
 group :development, :test do
   gem 'byebug', platform: :mri

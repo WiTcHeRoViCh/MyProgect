@@ -11,9 +11,12 @@
 <% else %>
   <% @users.each do |user| %>
 
-    <p>
-  	  <%= user.name %>
-    </p>
+    <ul>
+  	  <div>
+
+     	  <li class = "users_list"><%= image_tag(user.profile.avatar.middle) %><br/><span style = "margin-left: 20%;"><%= link_to user.name, user_path(user)%></span></li>
+  	  </div>
+    </ul>
 
   <% end %>	
 <% end %>
