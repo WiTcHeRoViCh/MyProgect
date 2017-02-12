@@ -9,10 +9,13 @@ class Ability
     can :read, Main
     if user.admin?
       can :manage, :all
-      can :access, :rails_admin
+      can :access, :rails_admin 
+      can :dashboard
     else
-      can :show, Profile
+      can :show, Profile, {user_id: user.id}
       can :update, Profile, {user_id: user.id}
+      can :show, User
+      can :create, User
     end 
     #
     # The first argument to `can` is the action you are giving the user

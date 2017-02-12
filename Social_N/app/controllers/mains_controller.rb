@@ -1,4 +1,5 @@
 class MainsController < ApplicationController
+  
   def index
   	if current_user
       @users = User.all - [current_user]
@@ -7,4 +8,5 @@ class MainsController < ApplicationController
     end
   	authorize! :index, Main
   end
+  
 end

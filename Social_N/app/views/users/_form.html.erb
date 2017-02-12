@@ -3,12 +3,12 @@
 
   <% if @user.errors.any? %>
 
-  <h2>Errors:</h2>
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li style = "color: red ;"><%= message %></li>
-    <% end %>
-  </ul>
+    <h2>Errors:</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li style = "color: red ;"><%= message %></li>
+      <% end %>
+    </ul>
 
 <% end %>
 
@@ -24,3 +24,4 @@
 
 <% end %>
 </div>
+  
