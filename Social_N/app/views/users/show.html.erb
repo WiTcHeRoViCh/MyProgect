@@ -2,3 +2,6 @@
   <% if can? :update, @user.profile %>
   	<%= link_to "Edit", edit_user_profile_path(@user, @user.profile) %>
   <% end %>	
+
+
+  <%= render 'comments' %>

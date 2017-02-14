@@ -6,7 +6,7 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
     
-    can :read, Main
+    can :show, User
     if user.admin?
       can :manage, :all
       can :access, :rails_admin 
@@ -14,8 +14,10 @@ class Ability
     else
       can :show, Profile, {user_id: user.id}
       can :update, Profile, {user_id: user.id}
-      can :show, User
       can :create, User
+      can :create, Session
+      can :destroy, Session
+      can :index, User
     end 
     #
     # The first argument to `can` is the action you are giving the user

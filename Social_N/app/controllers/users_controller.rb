@@ -1,7 +1,18 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
 
+  def index
+  	if current_user
+      @users = User.all - [current_user]
+    else
+      @users = User.all
+    end    
+  end	
+  
   def show
     @user = User.find(params[:id])
+    @comments = Comment.where(commentable_id: @user.id)
+    @comment = Comment.new
   end
 
   def new

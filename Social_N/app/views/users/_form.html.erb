@@ -1,16 +1,7 @@
 <div class = 'user_new'>
 <%= simple_form_for @user, url: {action: "create"}, html: {id: 'new_user', autocomplete: 'off'} do |f| %>
 
-  <% if @user.errors.any? %>
-
-    <h2>Errors:</h2>
-    <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li style = "color: red ;"><%= message %></li>
-      <% end %>
-    </ul>
-
-<% end %>
+  <%= render 'errors' %>
 
   <%= f.input :name, label: "Name" %>
 

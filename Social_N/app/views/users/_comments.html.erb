@@ -1,0 +1,24 @@
+<div>
+	<% @comments.each do |comment| %>
+
+    <div>
+    	<%= comment.body %>
+    	<%= comment.sender %>
+    </div>
+
+	<% end %>
+</div>
+
+<div>
+  <%= simple_form_for @comment do |comment| %>
+
+    <%= comment.hidden_field :commentable_type, value: 'User' %>
+    <%= comment.hidden_field :commentable_id, value: @user.id %>
+    <%= comment.hidden_field :user_id, value: current_user.id %>
+    <%= comment.hidden_field :sender, value: current_user.name %>
+
+    <%= comment.input :body %>
+    <p><%= comment.submit 'Sent comment' %></p>
+
+  <% end %>
+</div>
