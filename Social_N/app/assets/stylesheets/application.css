@@ -32,3 +32,23 @@ label.error {
 span.error {
 	color:red;
 }
+
+div#errors {
+	top: 81px;
+	width: 100%;
+  position: fixed;
+  background: #CF1010;
+}
+
+p.flash_error {
+	color:#1d1d1d;
+	font-style: oblique;
+	font-size:18px;
+	margin-left: 10px;
+}
+
+span.close {
+  float: right;
+  margin-right: 20px;
+  margin-top: 19px;
+}

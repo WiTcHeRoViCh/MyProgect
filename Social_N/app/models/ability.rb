@@ -8,8 +8,8 @@ class Ability
     
     can :show, User
     if user.admin?
+      binding.pry
       can :manage, :all
-      can :access, :rails_admin 
       can :dashboard
     else
       can :show, Profile, {user_id: user.id}
