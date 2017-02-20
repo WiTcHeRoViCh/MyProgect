@@ -13,6 +13,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @comments = Comment.where(commentable_id: @user.id)
     @comment = Comment.new
+
+    @friend = @user.friendships.new
   end
 
   def new

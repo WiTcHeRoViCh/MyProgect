@@ -8,9 +8,9 @@ class Ability
     
     can :show, User
     if user.admin?
-      binding.pry
       can :manage, :all
-      can :dashboard
+      can :access, :activeadmin
+      can :read, ActiveAdmin::Page, :name => "Dashboard"
     else
       can :show, Profile, {user_id: user.id}
       can :update, Profile, {user_id: user.id}

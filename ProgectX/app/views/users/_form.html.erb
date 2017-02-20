@@ -1,3 +1,4 @@
+<div class = "user_new">
 <%= simple_form_for @user, url: {action: "create"}, html: {id: 'new_user', autocomplete: 'off', default: ""} do |f| %>
 
   <%= f.input :name, label: "Your name" %>
@@ -13,3 +14,4 @@
   <%= f.submit 'Sign up'%>
 
 <% end %>
+</div>

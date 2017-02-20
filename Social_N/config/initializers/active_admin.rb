@@ -57,6 +57,8 @@ ActiveAdmin.setup do |config|
   # within the application controller.
 
   config.authorization_adapter = ActiveAdmin::CanCanAdapter
+  config.on_unauthorized_access = :access_denied
+
   # == User Authorization
   #
   # Active Admin will automatically call an authorization

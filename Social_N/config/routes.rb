@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   
   resources :users, only: [:new, :show, :create] do
     resources :profiles, only: [:show, :edit, :update]
+    resources :friendships, only: [:index, :new, :create], on: :member
   end
 
-  resources :mains, only: [:index]
+  #resources :mains, only: [:index, :new, :create]
   resources :comments
 
   get  'sign_up',  to: 'users#new',        as: :sign_up

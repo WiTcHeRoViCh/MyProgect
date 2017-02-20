@@ -1,7 +1,13 @@
 <h1><%= @user.name %></h1>
+
+  <% if @user != current_user %>
+    <%= link_to 'Add to friend', new_user_friendship_path(current_user, @user) %>
+  <% end %>  
+
   <% if can? :update, @user.profile %>
-  	<%= link_to "Edit", edit_user_profile_path(@user, @user.profile) %>
+  	<br/><%= link_to "Edit", edit_user_profile_path(@user, @user.profile) %>
   <% end %>	
 
-
-  <%= render 'comments' %>
+  <div>
+    <%= render 'comments' %>
+  </div>
