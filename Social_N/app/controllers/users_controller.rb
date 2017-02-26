@@ -14,7 +14,6 @@ class UsersController < ApplicationController
     @comments = Comment.where(commentable_id: @user.id)
     @comment = Comment.new
 
-    @friend = @user.friendships.new
   end
 
   def new
@@ -36,4 +35,8 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
+
+  def friend_params
+    params.require(:friendship).permit(:user_id, :friend_id, :accepted)
+  end  
 end

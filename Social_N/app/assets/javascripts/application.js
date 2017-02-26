@@ -26,17 +26,19 @@ $(document).ready(function() {
     showDropdowns: true
   });
 
-  var error = document.getElementById("errors")
-    
+  var error = document.getElementById("errors");
+
   var span = document.getElementsByClassName("close")[0];
 
+  var flash = document.getElementsByClassName("flash_error")[0];
+
   span.onclick = function() {
-    error.style.display = "none"
+    error.style.display = "none";
   }
 
   window.onclick = function(event) {
-    if (event.target != error || event.target != document.getElementByClassName("flash_error") {
-      error.style.display = "none"
+    if (event.target != flash) {
+      error.style.display = "none";
     }
   }
 
