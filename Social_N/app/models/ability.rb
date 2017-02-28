@@ -15,6 +15,8 @@ class Ability
     else
       can :show, Profile, {user_id: user.id}
       can :update, Profile, {user_id: user.id}
+      can :update, Comment, {user_id: user.id}
+      can :destroy, Comment, {user_id: user.id}
       can :create, User
       can :create, Session
       can :destroy, Session
