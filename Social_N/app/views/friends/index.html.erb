@@ -1,0 +1,23 @@
+<div>
+
+  <% if @friends.empty? %>
+    <h3>No one friends yet</h3>
+  <% else %>
+
+    <% @friends.each do |friend| %>
+
+      <span>
+        
+        <p>
+
+          <%= friend.name %>  <%= link_to 'Delete', user_invite_path(current_user, friend), method: :delete, data: {confirm: 'Remove from friends list?'} %>
+        
+        </p>
+
+      </span>
+
+    <% end %>
+
+  <% end %>
+
+</div>

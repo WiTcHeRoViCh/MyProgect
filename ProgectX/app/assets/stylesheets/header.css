@@ -1,0 +1,33 @@
+header {
+
+	background: url('header-2.jpg') 100% no-repeat;
+	background-size: 100% 105px;
+	width: 100%;
+  position: fixed;top:0;
+}
+
+div.container{
+	width: 50%;
+	margin:0 auto;
+}
+
+div.logo {
+	float:left;
+}
+
+.nav1{
+	float: right;
+	padding-left: 60%;
+}
+
+
+div.d {
+	margin-top: 90px;
+}
+
+li.li1 {
+	list-style: none;
+	float: left;
+	margin-left: 10px;
+  padding-top: 17%;
+}

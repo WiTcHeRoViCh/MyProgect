@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController 
   before_action :current_comment, only: [:update, :destroy]
+  load_and_authorize_resource only: :destroy
 
   def create
     Comment.create(params_comment)

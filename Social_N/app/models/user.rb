@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  has_many :invites
+
   has_one :profile
   has_many :comments, as: :commentable, dependent: :destroy
 

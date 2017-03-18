@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   
   resources :users, only: [:new, :show, :create] do
     resources :profiles, only: [:show, :edit, :update]
-    resources :friendships, only: [:index, :new, :create], on: :member
+    resources :invites, only: [:index, :update, :destroy]
+    resources :friendships, only: [:index, :new, :create, :show, :destroy] do 
+      get 'f_delete', to: 'friendships#destroy', as: :f_delete
+    end 
+
+    get 'friends', to: 'friends#index', as: :friends 
   end
 
   #resources :mains, only: [:index, :new, :create]

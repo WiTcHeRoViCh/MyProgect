@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = "Access denied."
-    redirect_to main_app.root_path
+    redirect_to main_app.root_path, status: 403
   end
 
   private
@@ -23,12 +23,25 @@ class ApplicationController < ActionController::Base
 
   def authenticate_admin_user!
     if current_user
-      redirect_to root_path, flash[:error] = 'Unauthorized.' unless current_admin?
+      flash[:error] = "You don't have rights!" unless current_admin?
+      redirect_to root_path
     else
       flash[:error] = "You must authorizing!"
       redirect_to root_path
     end
   end
 
-  helper_method :current_user, :current_admin?
+  def friendships_size
+    @friendships_size = current_user.friendships.where(accepted:false).size unless current_user.blank?
+  end 
+
+  def invite_size
+    @invite_size = current_user.invites.where(access: false).size unless current_user.blank?
+  end 
+
+  def sender (id_sender)
+    User.find(id_sender)
+  end 
+
+  helper_method :current_user, :current_admin?, :friendships_size, :sender, :invite_size
 end

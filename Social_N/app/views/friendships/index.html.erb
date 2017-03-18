@@ -1,5 +1,31 @@
 <% @friendships.each do |friend| %>
+ 
+  <div class = "friend_path">
 
+    <% if current_user.id == friend.user_id %>
+      <h3>Request to <%= User.find(friend.friend_id).name %> </h3>
+      
+      
+      <%= link_to 'Delete request', user_friendship_f_delete_path(current_user, friend) %>
+    
+    <% else %>  
   
+      <span> 
+
+        <%= simple_form_for friend, url: user_friendships_path(@user, friend) do |f| %>
+
+          <%= f.check_box :accepted %> 
+
+          <%= f.submit 'Request to confirm' %>
+
+        <% end %>
+
+        <br/>
+        <%= link_to 'Delete request', friend, method: :delete %>
+      </span>
+
+    <% end %>  
+
+    </div>
 
 <% end %>
