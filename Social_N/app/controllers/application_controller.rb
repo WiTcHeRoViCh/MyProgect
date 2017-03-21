@@ -10,7 +10,12 @@ class ApplicationController < ActionController::Base
   private
 
   def login?
-    redirect_to root_path unless current_user
+    
+    unless current_user
+      flash[:error] = "You must be authorizing!"
+      redirect_to root_path, status: 403 
+    end
+      
   end
 
   def current_user
@@ -26,7 +31,7 @@ class ApplicationController < ActionController::Base
       flash[:error] = "You don't have rights!" unless current_admin?
       redirect_to root_path
     else
-      flash[:error] = "You must authorizing!"
+      flash[:error] = "You must be authorizing!"
       redirect_to root_path
     end
   end
@@ -43,5 +48,9 @@ class ApplicationController < ActionController::Base
     User.find(id_sender)
   end 
 
-  helper_method :current_user, :current_admin?, :friendships_size, :sender, :invite_size
+  def check_on_friend?(friend_id)
+    return true if current_user.friendships.find_by(friend_id: friend_id, accepted: true)
+  end 
+
+  helper_method :current_user, :current_admin?, :friendships_size, :sender, :invite_size, :check_on_friend?
 end

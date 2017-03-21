@@ -1,3 +1,9 @@
 <% unless current_user == @user %>
-  <%= link_to 'Add to friend', new_user_friendship_path(@user) %>
+
+  <% if check_on_friend?(params[:id]) %>
+    <h4><%= @user.name %> is your friend</h4>
+  <% else %>  
+    <%= link_to 'Add to friend', new_user_friendship_path(@user) %>
+  <% end %>
+
 <% end %>  
