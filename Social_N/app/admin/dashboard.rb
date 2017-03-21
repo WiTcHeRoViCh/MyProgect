@@ -6,7 +6,7 @@ ActiveAdmin.register_page "Dashboard" do
     private
 
     def authenticate?
-      unless current_user && current_admin?
+      unless current_admin?
         flash[:error] = "Access denied"
         redirect_to root_path, status: 403
       end  

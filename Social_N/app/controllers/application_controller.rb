@@ -27,12 +27,11 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin_user!
-    if current_user
-      flash[:error] = "You don't have rights!" unless current_admin?
-      redirect_to root_path
+    if current_admin?
+
     else
-      flash[:error] = "You must be authorizing!"
-      redirect_to root_path
+      flash[:error] = "You don't have rights!"
+      redirect_to root_path, status: 403
     end
   end
 
