@@ -27,6 +27,8 @@ gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resour
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 gem 'cancancan'
 gem 'country_select'
+gem 'omniauth'
+gem 'omniauth-vkontakte'
 
 group :development, :test do
   gem 'byebug', platform: :mri
