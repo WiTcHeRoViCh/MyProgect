@@ -6,8 +6,8 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
     
-    can :show, User
-    can :read, User
+    
+    
     if user.admin?
       can :manage, :all
       can :access, :activeadmin
@@ -21,6 +21,8 @@ class Ability
       can :create, Session
       can :destroy, Session
       can :index, User
+      can :show, User
+      can :read, User
     end 
     #
     # The first argument to `can` is the action you are giving the user

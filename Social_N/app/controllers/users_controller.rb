@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
+  before_action :login?, only: [:edit]
 
   def index
   	if current_user
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @comments = Comment.where(commentable_id: @user.id)
+    @comments = Comment.includes(:user).where(commentable_id: @user.id)
     @comment = Comment.new
 
   end

@@ -19,8 +19,6 @@ ActiveAdmin.register User do
     	end	
     end
     
-
-
     private
 
     def user_params

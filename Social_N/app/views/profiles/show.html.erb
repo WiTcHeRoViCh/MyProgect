@@ -21,3 +21,7 @@
       end	
 	%>
 </p>
+
+<% if can? :update, @user.profile %>
+	<br/><%= link_to "Edit", edit_user_profile_path(@user, @user.profile) %>
+<% end %>	
