@@ -52,5 +52,11 @@ class ApplicationController < ActionController::Base
     return true if current_user.friendships.find_by(friend_id: friend_id, accepted: true)
   end 
 
-  helper_method :current_user, :current_admin?, :friendships_size, :sender, :invite_size, :check_on_friend?
+  def user_friends
+    @friends = current_user.friends.select {|friend|
+      friend.friendships.where(acceted: true, friend_id: current_user.id)
+    }
+  end 
+
+  helper_method :current_user, :current_admin?, :friendships_size, :sender, :invite_size, :check_on_friend?, :user_friends
 end

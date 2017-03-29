@@ -1,0 +1,40 @@
+<h3>Dialog with
+  <% if @conversation.sender_id == current_user.id %>
+    <%= User.find(@conversation.recipient_id).name %>
+  <% else %>	
+    <%= User.find(@conversation.sender_id).name %>
+  <% end %>  
+</h3>
+
+<% if @over_ten %>
+  <span><%= link_to "Show all", '?m=all' %><span>
+<% end %>
+
+<% @messages.each do |message| %>
+  <% if message.body %>
+    
+    <% user = User.find(message.user_id) %>
+    <strong><%= user.name %></strong>
+
+    <%= message.message_time %>
+    <p><%= message.body %></p>
+
+  <% end %>
+<% end %>
+
+
+<div>
+	
+	<%= simple_form_for [@conversation, @message] do |f| %>
+
+		<%= f.hidden_field :user_id, value: current_user.id %>
+
+		<div>
+			<%= f.text_area :body %>
+		</div>
+
+		<%= f.submit "Send message" %>
+
+	<% end %>
+
+</div>

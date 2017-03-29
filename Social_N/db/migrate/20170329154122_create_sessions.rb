@@ -3,6 +3,6 @@ class CreateSessions < ActiveRecord::Migration[5.0]
     create_table :sessions do |t|
 
       t.timestamps
-    end
+    end  
   end
 end

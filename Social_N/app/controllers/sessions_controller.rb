@@ -9,12 +9,16 @@ class SessionsController < ApplicationController
     if params[:email]
       user = User.find_by(email: params[:email])
     else
-      params[:password] = "123"
       user = User.find_or_create_by(email: auth_params['info']['email'], name: auth_params['info']['first_name'],
                                       password_digest: "$2a$10$mkfG63yfU39pEN1ISskzUejJTeNvM5TQkK6SMsPTdaFLbWDhxsdeW")  
+      if user.password = "123"
+        params[:password] = "123"
+      else
+        params[:password] = user.password
+      end
     end
 
-    if user && ( user.authenticate(params[:password]) )
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to user
     else

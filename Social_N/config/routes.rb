@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   #resources :mains, only: [:index, :new, :create]
   resources :comments
+  
+  resources :conversations do 
+    resources :messages
+  end  
 
   get  'sign_up',  to: 'users#new',        as: :sign_up
   get  'sign_in',  to: 'sessions#new',     as: :sign_in

@@ -10,8 +10,10 @@
         
         <p>
 
-          <%= friend.name %>  <%= link_to 'Delete', user_invite_path(current_user, friend), method: :delete, data: {confirm: 'Remove from friends list?'} %>
-        
+          <%= link_to friend.name, friend %>  <%= link_to 'Delete', user_invite_path(current_user, friend), method: :delete, data: {confirm: 'Remove from friends list?'} %>
+          
+          <%= render partial: 'write_messages/messages', locals: {user: friend} %>
+
         </p>
 
       </span>

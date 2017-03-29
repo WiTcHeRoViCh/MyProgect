@@ -4,7 +4,8 @@
   	<% if check_on_friend?(params[:id]) %>
 
     	<h4><%= @user.name %> is your friend</h4>
-    	<span><%= link_to("Write messages", root_path) %></span>
+    	
+    	<%= render partial: 'write_messages/messages', locals: {user: @user} %>
 
   	<% else %>
 
