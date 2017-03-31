@@ -23,6 +23,7 @@ class Ability
       can :index, User
       can :show, User
       can :read, User
+      can :manage, Message, {user_id: user.id}
     end 
     #
     # The first argument to `can` is the action you are giving the user

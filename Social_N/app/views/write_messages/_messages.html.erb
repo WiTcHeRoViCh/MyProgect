@@ -2,5 +2,5 @@
   <%= conversation.hidden_field :sender_id, value: current_user.id %>
   <%= conversation.hidden_field :recipient_id, value: user.id %>
 
-  <%= conversation.submit "Write message" %>
+  <%= conversation.submit "Write message", :class => "room-channel" %>
 <% end %>

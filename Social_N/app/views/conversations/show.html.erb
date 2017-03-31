@@ -1,0 +1,13 @@
+<h1>Chat with 
+  <% if @conversation.sender_id == current_user.id %>
+    <%= User.find(@conversation.recipient_id).name %>
+  <% else %>	
+    <%= User.find(@conversation.sender_id).name %>
+  <% end %> 
+</h1>
+
+<div id = "messages" data-room-id=<%=room.id%>>
+  <%= render messages %>
+</div>
+
+<%= render partial: 'messages/form', locals: {message: message} %>

@@ -90,8 +90,14 @@ span.user_mini_avatar_text {
 
 div.user_admin {
 	position: absolute;
-	top: 37%;
+	top: 30%;
   left:40%;
+}
+
+div.conversation {
+	position: absolute;
+	top: 30%;
+	left: 50%;
 }
 
 

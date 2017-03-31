@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   #resources :mains, only: [:index, :new, :create]
   resources :comments
   
-  resources :conversations do 
-    resources :messages
-  end  
+  resources :conversations 
+  resources :messages
+
 
   get  'sign_up',  to: 'users#new',        as: :sign_up
   get  'sign_in',  to: 'sessions#new',     as: :sign_in
@@ -27,5 +27,7 @@ Rails.application.routes.draw do
   root 'users#index'
 
   get '/auth/:provider/callback', to: 'sessions#create'
+
+  mount ActionCable.server => '/cable'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
