@@ -18,48 +18,9 @@ body {
 	margin:auto;
 }
 
-header {
-
-	background: url('header-2.jpg') 100% no-repeat;
-	background-size: 100% 105px;
-	width: 100%;
-  position: fixed;top:0;
-}
-
-div.container{
-	width: 50%;
-	margin:0 auto;
-}
-
-div.logo {
-	float:left;
-}
-
 a {
   text-decoration: none;
-}
-
-li {
-	list-style: none;
-	float: left;
-	margin-left: 10px;
-}
-
-li.li2 {
-	padding-top: 13%;
-}
-
-li.li1 {
-  padding-top: 13%;
-}
-
-.nav1{
-	float: right;
-}
-
-
-div.d {
-	margin-top: 90px;
+  color:#00008B;
 }
 
 

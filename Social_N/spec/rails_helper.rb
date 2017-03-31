@@ -1,7 +1,7 @@
 require 'simplecov'
 SimpleCov.start 'rails'
 require File.expand_path('../../config/environment', __FILE__)
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/poltergeist'
@@ -13,7 +13,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
 Capybara.javascript_driver = :poltergeist
 Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, window_size: [1200, 700], js_errors: false )
+  Capybara::Poltergeist::Driver.new(app, window_size: [1200, 700], js_errors: false)
 end
 
 RSpec.configure do |config|

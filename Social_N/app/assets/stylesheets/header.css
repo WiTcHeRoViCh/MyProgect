@@ -1,0 +1,113 @@
+header {
+	background: url('header-2.jpg') 100% no-repeat;
+	background-size: 100% 105px;
+	width: 100%;
+  position: fixed;top:0;
+}
+
+div.container{
+	width: 50%;
+	margin:0 auto;
+}
+
+div.logo {
+	float:left;
+}
+
+.nav1{
+	float: right;
+}
+
+
+div.d {
+	margin-top: 90px;
+}
+
+li {
+  list-style: none;
+}
+
+li.li2 {
+	color: #00008B;
+  float: left;
+	margin-left: 15px;
+  margin-top: 3%;
+}
+
+div.header_sign_out {
+	position: relative; top: 15px;
+}
+
+ul.ul2 {
+	position: relative; top:17px;
+}
+
+div#user_menu {
+	display: none;
+	position: fixed;
+	width: 120px;
+	height: 140px;
+	background: #ECECEC;
+	border: 1px solid #a5a5a5;
+	border-radius:3px;
+}
+
+div#d_sign_in {
+	display: none;
+	position: absolute;
+	width: 340px;
+	height: 197px;
+	background: #ECECEC;
+	border: 1px solid #a5a5a5;
+	border-radius: 3px;
+	right: 0%;
+}
+
+div.d_cont {
+	color: #000;
+	background: #dadde1;
+	padding: 5px;
+	padding-top: 10px;
+}
+
+div.form_label {
+	text-align: right;
+}
+
+div.user_menu_link {
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+div.user_mini_avatar {
+  position: relative; bottom: 3px;
+}
+
+span.user_mini_avatar_text {
+	position: relative; bottom: 17px;
+}
+
+
+div.user_admin {
+	position: absolute;
+	top: 30%;
+  left:40%;
+}
+
+div.conversation {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+}
+
+
+div.sign_up {
+  margin-top: 3px;
+  color: #000;
+  margin-left: 4px;
+}
+
+img.mini_avatar {
+  border-radius: 50%;
+  height: 50px;
+}

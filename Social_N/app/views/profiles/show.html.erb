@@ -1,0 +1,27 @@
+<h1><%= @user.name %> information</h1>
+
+<p>
+	Country: <b><%= @profile.country %></b>
+</p>
+
+<p>
+	Birthday: <b><%= @profile.birthday %></b>
+</p>
+
+<p>
+	Gender: <b><%= @profile.gender %></b>
+</p>
+
+<p>
+	Your avatar:<br/>
+	<%= if @profile.avatar?
+		    image_tag(@profile.avatar)
+      else
+      	image_tag(@profile.avatar = "default.png")
+      end	
+	%>
+</p>
+
+<% if can? :update, @user.profile %>
+	<br/><%= link_to "Edit", edit_user_profile_path(@user, @user.profile) %>
+<% end %>	

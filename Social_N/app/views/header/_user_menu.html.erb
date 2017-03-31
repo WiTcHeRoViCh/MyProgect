@@ -1,0 +1,8 @@
+<div id = "user_menu">
+  <div class = "user_menu_link"><%= link_to "User", current_user %>                                                       </div>
+  <div class = "user_menu_link"><%= link_to "Your profile", user_profile_path(current_user, current_user) %>              </div>
+  <div class = "user_menu_link"><%= link_to "Edit", edit_user_profile_path(current_user, current_user) %>                 </div>
+  <div class = "user_menu_link"><%= link_to "Friendships", user_friendships_path(current_user) %> <%= friendships_size %> </div>
+  <div class = "user_menu_link"><%= link_to "Invites", user_invites_path(current_user) %> <%= invite_size %>              </div>
+  <div class = "user_menu_link"><%= link_to "Friends", user_friends_path(current_user) %>                                 </div>
+</div>

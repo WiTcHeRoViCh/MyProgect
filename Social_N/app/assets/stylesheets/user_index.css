@@ -1,0 +1,9 @@
+li.users_list {
+  float: left;
+  margin-left: 15px;
+}
+
+img.middle_avatar {
+	height: 102px;
+	width: 102px;
+}

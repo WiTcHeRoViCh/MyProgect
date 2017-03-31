@@ -1,0 +1,13 @@
+<div class = "message" data-message-id = <%=message.id%>>
+  <% user = User.find(message.user_id) %>
+  <strong><%= user.name %></strong> <span class = "destroy_message">Delete</span>
+
+  <%= message.message_time %>
+  <p>
+    <%= message.body %>
+  	<% if can? :edit, message %>
+  	  <%= link_to "Edit", edit_message_path(message) %>
+  	<% end %>  
+  </p>
+
+</div>

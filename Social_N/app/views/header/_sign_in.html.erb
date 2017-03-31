@@ -1,0 +1,30 @@
+<div id = "d_sign_in">
+  <div class = "d_cont">
+    <%= form_tag sessions_path, html: { autocomplete: 'off'} do %>
+                  
+      <div class = "form_label">
+        <%= label_tag :email %>
+        <%= email_field_tag :email %>  
+      </div>
+
+      <p></p>
+                  
+      <div class = "form_label">
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+      </div>  
+                  
+      <p></p>
+      
+      <%= submit_tag 'Sign in' %>
+
+    <% end %>
+  </div>
+
+  <div class = "sign_up">
+    First here? <%= link_to "Sign up", sign_up_path %> 
+    <p>
+      Or sign in with: <b><%= link_to "Vk", "/auth/vkontakte" %></b>
+    </p> 
+  </div> 
+</div>

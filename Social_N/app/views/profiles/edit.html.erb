@@ -1,0 +1,26 @@
+<h1>Edit your profile</h1>
+
+<%= form_for [@user, @profile], html: {autocomplete: 'off'} do |f| %>
+
+  <p><%= f.label("Your gender") %><br/>
+  <%= f.label :gender, "Man", value: "man" %>
+  <%= f.radio_button :gender, "man" %>
+  
+  <%= f.label :gender, "Woman", value: "woman" %>
+  <%= f.radio_button :gender, "woman" %><br/></p>
+
+  <p><%= f.label :country %><br/>
+  <%= f.text_field :country %><br/></p>
+
+  <p><%= f.label :birthday %><br/>
+  <%= f.date_field :birthday, value: "Не установленно" %><br/></p>
+  
+  <p><%= f.label :about %><br/>
+  <%= f.text_area :about %><br/></p>
+
+  <p><%= f.label :avatar %><br/>
+  <%= f.file_field :avatar %></p>
+
+  <p><%= f.submit %></p>
+
+<% end %>	

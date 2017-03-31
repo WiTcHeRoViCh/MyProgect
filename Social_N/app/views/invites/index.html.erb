@@ -1,0 +1,28 @@
+<div>
+
+  <% if @invite.empty? %>
+    <h3>No one invite yet</h3>
+  <% else %>
+
+    <% @invite.each do |invite| %>
+
+      <span>
+      	<p><%= link_to sender(invite.sender_id).name, sender(invite.sender_id) %></p>
+      	<%= simple_form_for invite, url: user_invite_path(current_user, invite) do |f| %>
+
+          <%= f.check_box :access %>
+
+          <%= f.submit 'Confirm' %>
+
+      	<% end %>
+
+      	<br/>
+      	<%= link_to 'Delete', user_invite_path(current_user, invite), method: :delete %>
+
+      </span>
+
+    <% end %>
+
+  <% end %>
+
+</div>

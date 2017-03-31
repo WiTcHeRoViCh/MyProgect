@@ -1,0 +1,17 @@
+<% if current_user %>	
+	<% unless current_user == @user %>
+
+  	<% if check_on_friend?(params[:id]) %>
+
+    	<h4><%= @user.name %> is your friend</h4>
+    	
+    	<%= render partial: 'write_messages/messages', locals: {user: @user} %>
+
+  	<% else %>
+
+    	<%= link_to 'Add to friend', new_user_friendship_path(@user) %>
+    
+  	<% end %>
+
+	<% end %>  
+<% end %>	
